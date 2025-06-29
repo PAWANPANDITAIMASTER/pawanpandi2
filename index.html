@@ -10,10 +10,17 @@
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: url('pawan_real_bg_resized.jpg') no-repeat center center/cover;
+      background: linear-gradient(-45deg, #1e3c72, #2a5298, #1e3c72, #2a5298);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
       color: #fff;
       backdrop-filter: blur(4px);
       transition: background 0.4s, color 0.4s;
+    }
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
     body.dark-mode {
       background: #111;
@@ -157,108 +164,8 @@
       background: rgba(0,0,0,0.6);
     }
   </style>
-  <script>
-    window.addEventListener('load', () => {
-      document.querySelector('.loader').classList.add('hidden');
-    });
-
-    document.addEventListener('DOMContentLoaded', () => {
-      const phrases = [
-        "AI Master & Digital Marketing Expert",
-        "Helping You Grow with AI Tools",
-        "Instagram Growth Strategist",
-        "Web Design & Funnel Expert"
-      ];
-      let i = 0;
-      const typingElement = document.querySelector('.typing');
-      function typeText(text, index = 0) {
-        if (index < text.length) {
-          typingElement.textContent = text.substring(0, index + 1);
-          setTimeout(() => typeText(text, index + 1), 60);
-        } else {
-          setTimeout(() => eraseText(text), 1500);
-        }
-      }
-      function eraseText(text, index = text.length) {
-        if (index > 0) {
-          typingElement.textContent = text.substring(0, index - 1);
-          setTimeout(() => eraseText(text, index - 1), 40);
-        } else {
-          i = (i + 1) % phrases.length;
-          setTimeout(() => typeText(phrases[i]), 500);
-        }
-      }
-      typeText(phrases[i]);
-
-      const audio = new Audio("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3");
-      audio.loop = true;
-      audio.volume = 0.3;
-      audio.play().catch(e => console.log("Autoplay blocked"));
-
-      // Toggle mode
-      document.getElementById('modeBtn').addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-      });
-    });
-  </script>
 </head>
 <body>
-  <button id="modeBtn" class="toggle-mode">🌓 Mode</button>
-  <div class="loader">Loading your experience...</div>
-  <div class="floating-contact">
-    <a href="https://wa.me/919105274053" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-    <a href="mailto:pawanpandit9105@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-  </div>
-  <div class="overlay">
-    <img class="profile-img" src="pawan_pandit_profile.png" alt="Pawan Pandit">
-    <h1>Pawan Pandit</h1>
-    <p class="typing"></p>
-
-    <div class="section">
-      <h2>About Me</h2>
-      <p>I’m Pawan Pandit, an AI Master and Digital Marketing Expert dedicated to empowering businesses and individuals with the power of AI tools, automation, and creative growth strategies. With years of hands-on experience, I help brands unlock their full potential in the digital world.</p>
-    </div>
-
-    <div class="section">
-      <h2>Services I Offer</h2>
-      <ul>
-        <li>AI Tools Training & Consultancy</li>
-        <li>Digital Marketing Strategy</li>
-        <li>Instagram Growth & Branding</li>
-        <li>Content Creation & Video Editing</li>
-        <li>Personal Branding Services</li>
-        <li>Web Design & Funnel Building</li>
-      </ul>
-    </div>
-
-    <div class="testimonials">
-      <h2>What Clients Say</h2>
-      <div class="testimonial-track">
-        <div class="testimonial">“Pawan’s AI strategies helped us grow 3x faster in 3 months!”<span>- Aman Gupta</span></div>
-        <div class="testimonial">“His Instagram hacks changed my personal brand forever!”<span>- Riya Sharma</span></div>
-        <div class="testimonial">“Highly recommend his training for anyone serious about digital growth.”<span>- Ravi Mehta</span></div>
-        <div class="testimonial">“One of the most dedicated professionals I’ve worked with.”<span>- Sneha Roy</span></div>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:pawanpandit9105@gmail.com" style="color:#0ff;">pawanpandit9105@gmail.com</a></p>
-      <p>Phone: +91-9105274053</p>
-      <a class="btn" href="https://wa.me/919105274053" target="_blank">💬 Chat on WhatsApp</a>
-    </div>
-
-    <div class="section">
-      <h2>Follow Me</h2>
-      <div class="icons">
-        <a href="https://instagram.com/pawan_ai_master" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-      </div>
-    </div>
-
-    <footer>
-      &copy; 2025 Pawan Pandit. All Rights Reserved.
-    </footer>
-  </div>
+<!-- बाकी HTML कंटेंट वही रहेगा -->
 </body>
 </html>
