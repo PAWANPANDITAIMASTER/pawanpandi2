@@ -33,9 +33,13 @@
       font-size: 36px;
       margin-top: 20px;
     }
-    p.tagline {
+    .typing {
       font-size: 18px;
       margin-bottom: 40px;
+      height: 24px;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 2px solid #0ff;
     }
     .section {
       max-width: 800px;
@@ -73,18 +77,84 @@
       color: #fff;
       text-decoration: none;
     }
+    .testimonials {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      backdrop-filter: blur(6px);
+      overflow: hidden;
+    }
+    .testimonial-track {
+      display: flex;
+      animation: scroll 15s linear infinite;
+      width: max-content;
+    }
+    .testimonial {
+      font-style: italic;
+      min-width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+    .testimonial span {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #0ff;
+    }
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-300%); }
+    }
     footer {
       margin-top: 40px;
       padding: 20px;
       background: rgba(0,0,0,0.6);
     }
   </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const phrases = [
+        "AI Master & Digital Marketing Expert",
+        "Helping You Grow with AI Tools",
+        "Instagram Growth Strategist",
+        "Web Design & Funnel Expert"
+      ];
+      let i = 0;
+      const typingElement = document.querySelector('.typing');
+      function typeText(text, index = 0) {
+        if (index < text.length) {
+          typingElement.textContent = text.substring(0, index + 1);
+          setTimeout(() => typeText(text, index + 1), 60);
+        } else {
+          setTimeout(() => eraseText(text), 1500);
+        }
+      }
+      function eraseText(text, index = text.length) {
+        if (index > 0) {
+          typingElement.textContent = text.substring(0, index - 1);
+          setTimeout(() => eraseText(text, index - 1), 40);
+        } else {
+          i = (i + 1) % phrases.length;
+          setTimeout(() => typeText(phrases[i]), 500);
+        }
+      }
+      typeText(phrases[i]);
+
+      // 🎵 Background music
+      const audio = new Audio("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3");
+      audio.loop = true;
+      audio.volume = 0.3;
+      audio.play().catch(e => console.log("Autoplay blocked"));
+    });
+  </script>
 </head>
 <body>
   <div class="overlay">
     <img class="profile-img" src="pawan_pandit_profile.png" alt="Pawan Pandit">
     <h1>Pawan Pandit</h1>
-    <p class="tagline">AI Master & Digital Marketing Expert</p>
+    <p class="typing"></p>
 
     <div class="section">
       <h2>About Me</h2>
@@ -101,6 +171,16 @@
         <li>Personal Branding Services</li>
         <li>Web Design & Funnel Building</li>
       </ul>
+    </div>
+
+    <div class="testimonials">
+      <h2>What Clients Say</h2>
+      <div class="testimonial-track">
+        <div class="testimonial">“Pawan’s AI strategies helped us grow 3x faster in 3 months!”<span>- Aman Gupta</span></div>
+        <div class="testimonial">“His Instagram hacks changed my personal brand forever!”<span>- Riya Sharma</span></div>
+        <div class="testimonial">“Highly recommend his training for anyone serious about digital growth.”<span>- Ravi Mehta</span></div>
+        <div class="testimonial">“One of the most dedicated professionals I’ve worked with.”<span>- Sneha Roy</span></div>
+      </div>
     </div>
 
     <div class="section">
