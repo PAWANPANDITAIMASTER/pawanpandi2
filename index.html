@@ -10,191 +10,91 @@
     body {
       font-family: 'Segoe UI', sans-serif;
       background-color: #0f0f0f;
-      background-image: url('https://cdn.pixabay.com/photo/2022/08/22/10/41/artificial-intelligence-7401600_1280.png');
-      background-size: cover;
-      background-attachment: fixed;
-      background-repeat: no-repeat;
+      background-image: linear-gradient(to right, #0f0f0f, #2c3e50);
       color: #fff;
       line-height: 1.6;
     }
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.7);
-      z-index: -1;
-    }
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
     header {
-      background: rgba(0,0,0,0.6);
-      padding: 100px 20px;
       text-align: center;
+      padding: 100px 20px;
     }
     header h1 {
       font-size: 48px;
       color: #00ffe1;
-      text-shadow: 2px 2px 8px #000;
     }
     header p {
       font-size: 20px;
       color: #fff;
       margin-top: 10px;
-      text-shadow: 1px 1px 6px #000;
-    }
-    nav {
-      text-align: center;
-      margin: 20px 0;
-    }
-    nav a {
-      margin: 0 15px;
-      color: #00ffe1;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-      background: rgba(0,0,0,0.6);
-      border-radius: 10px;
-    }
-    section h2 {
-      color: #00ffe1;
-      margin-bottom: 10px;
     }
     .profile-image {
       text-align: center;
-      margin-bottom: 30px;
+      margin-top: 20px;
     }
     .profile-image img {
-      max-width: 220px;
-      border-radius: 10px;
-      border: 3px solid #00ffe1;
+      max-width: 180px;
+      border-radius: 100px;
+      border: 4px solid #00ffe1;
     }
-    .services ul {
-      list-style: none;
-      padding: 0;
-    }
-    .services li {
-      margin-bottom: 10px;
-      padding-left: 20px;
-      position: relative;
-    }
-    .services li::before {
-      content: '\2022';
-      color: #00ffe1;
-      position: absolute;
-      left: 0;
-    }
-    .pricing {
+    .ai-video, .ai-cinematic {
+      display: flex;
+      justify-content: center;
       margin: 40px auto;
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-    }
-    .pricing-card {
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid #00ffe1;
-      border-radius: 10px;
-      padding: 20px;
-      margin: 10px;
-      width: 250px;
-      text-align: center;
-    }
-    .pricing-card h3 {
-      color: #00ffe1;
-      margin-bottom: 10px;
-    }
-    .pricing-card p {
-      font-size: 18px;
-    }
-    .pricing-card .price {
-      font-size: 28px;
-      margin: 15px 0;
-      color: #00ffe1;
-    }
-    .pricing-card a {
-      display: inline-block;
-      padding: 10px 15px;
-      background: #00ffe1;
-      color: #000;
-      text-decoration: none;
-      border-radius: 5px;
-      margin-top: 10px;
-    }
-    .counters {
-      display: flex;
-      justify-content: space-around;
-      text-align: center;
-      margin-top: 40px;
-    }
-    .counter-box {
-      padding: 20px;
-    }
-    .counter-number {
-      font-size: 40px;
-      color: #00ffe1;
-      font-weight: bold;
-    }
-    .testimonial-slider {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 30px;
-      border-radius: 10px;
       max-width: 800px;
-      margin: 40px auto;
-      text-align: center;
     }
-    .testimonial-slider blockquote {
-      font-style: italic;
-      color: #ccc;
-      margin-bottom: 15px;
-    }
-    .testimonial-slider h4 {
-      margin-bottom: 30px;
-      color: #00ffe1;
-    }
-    .cta {
-      background: #00ffe1;
-      color: #000;
+    section {
       padding: 40px 20px;
-      text-align: center;
-      font-size: 24px;
-      font-weight: bold;
+      background: rgba(0,0,0,0.6);
+      margin: 20px auto;
+      border-radius: 10px;
+      max-width: 1000px;
     }
-    .cta a {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 20px;
-      background: #000;
-      color: #00ffe1;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-    .contact, .social-icons {
-      margin-top: 30px;
-    }
-    .social-icons a {
-      margin-right: 15px;
-      font-size: 24px;
-      color: #00ffe1;
-      text-decoration: none;
-    }
+    h2 { color: #00ffe1; text-align: center; margin-bottom: 20px; }
     footer {
       text-align: center;
       padding: 20px;
-      background: rgba(0, 0, 0, 0.3);
       color: #ccc;
+      background: rgba(255,255,255,0.05);
     }
   </style>
 </head>
 <body>
-  <!-- existing HTML content remains unchanged -->
+  <header>
+    <h1>Pawan Pandit</h1>
+    <p>AI Master & Digital Marketing Expert</p>
+  </header>
+
+  <div class="profile-image">
+    <img src="https://pawanpanditaimaster.github.io/pawanpandit/profile.jpg" alt="Pawan Pandit Profile" />
+  </div>
+
+  <section class="ai-video">
+    <iframe width="100%" height="400" src="https://www.youtube.com/embed/2ePf9rue1Ao" title="AI in Digital Marketing" frameborder="0" allowfullscreen></iframe>
+  </section>
+
+  <section>
+    <h2>About Me</h2>
+    <p>I’m Pawan Pandit, an AI Master and Digital Marketing Expert dedicated to empowering businesses and individuals with AI tools, automation, and growth strategies.</p>
+  </section>
+
+  <section>
+    <h2>Services I Offer</h2>
+    <ul>
+      <li>AI Tools Training & Consultancy</li>
+      <li>Digital Marketing Strategy</li>
+      <li>Instagram Growth & Branding</li>
+      <li>Content Creation & Video Editing</li>
+      <li>Personal Branding Services</li>
+      <li>Web Design & Funnel Building</li>
+    </ul>
+  </section>
+
+  <section class="ai-cinematic">
+    <iframe width="100%" height="400" src="https://www.youtube.com/embed/tQbdULuvfU8" title="AI Tools Cinematic" frameborder="0" allowfullscreen></iframe>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Pawan Pandit. All Rights Reserved.</p>
+  </footer>
 </body>
 </html>
