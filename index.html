@@ -48,6 +48,15 @@
       color: #00ffe1;
       margin-bottom: 10px;
     }
+    .profile-image {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .profile-image img {
+      max-width: 220px;
+      border-radius: 10px;
+      border: 3px solid #00ffe1;
+    }
     .services ul {
       list-style: none;
       padding: 0;
@@ -63,30 +72,72 @@
       position: absolute;
       left: 0;
     }
-    .testimonial {
+    .pricing {
+      margin: 40px auto;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+    .pricing-card {
+      background: #111;
+      border: 1px solid #00ffe1;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 10px;
+      width: 250px;
+      text-align: center;
+    }
+    .pricing-card h3 {
+      color: #00ffe1;
+      margin-bottom: 10px;
+    }
+    .pricing-card p {
+      font-size: 18px;
+    }
+    .pricing-card .price {
+      font-size: 28px;
+      margin: 15px 0;
+      color: #00ffe1;
+    }
+    .pricing-card a {
+      display: inline-block;
+      padding: 10px 15px;
+      background: #00ffe1;
+      color: #000;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+    .counters {
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+      margin-top: 40px;
+    }
+    .counter-box {
+      padding: 20px;
+    }
+    .counter-number {
+      font-size: 40px;
+      color: #00ffe1;
+      font-weight: bold;
+    }
+    .testimonial-slider {
       background: #111;
       padding: 30px;
       border-radius: 10px;
+      max-width: 800px;
       margin: 40px auto;
       text-align: center;
-      max-width: 800px;
     }
-    .testimonial p {
+    .testimonial-slider blockquote {
       font-style: italic;
-      margin-bottom: 10px;
+      color: #ccc;
+      margin-bottom: 15px;
     }
-    .testimonial h4 {
+    .testimonial-slider h4 {
+      margin-bottom: 30px;
       color: #00ffe1;
-      font-weight: normal;
-    }
-    .contact, .social-icons {
-      margin-top: 30px;
-    }
-    .social-icons a {
-      margin-right: 15px;
-      font-size: 24px;
-      color: #00ffe1;
-      text-decoration: none;
     }
     .cta {
       background: #00ffe1;
@@ -105,6 +156,15 @@
       text-decoration: none;
       border-radius: 5px;
     }
+    .contact, .social-icons {
+      margin-top: 30px;
+    }
+    .social-icons a {
+      margin-right: 15px;
+      font-size: 24px;
+      color: #00ffe1;
+      text-decoration: none;
+    }
     footer {
       text-align: center;
       padding: 20px;
@@ -122,10 +182,14 @@
   <nav>
     <a href="#about">About</a>
     <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
     <a href="#contact">Contact</a>
   </nav>
 
   <section id="about">
+    <div class="profile-image">
+      <img src="https://raw.githubusercontent.com/PAWANPANDITAIMASTER/pawanpandi2/main/profile.jpg" alt="Pawan Pandit">
+    </div>
     <h2>About Me</h2>
     <p>I specialize in using artificial intelligence tools and digital marketing strategies to help brands grow faster and smarter. With a proven track record in Instagram growth, content automation, and personal branding, I empower individuals and businesses to reach their highest potential.</p>
   </section>
@@ -142,9 +206,49 @@
     </ul>
   </section>
 
-  <div class="testimonial">
-    <p>"Working with Pawan was the best decision! His strategies helped our brand go viral on Instagram in just weeks."</p>
+  <section id="pricing" class="pricing">
+    <div class="pricing-card">
+      <h3>Starter</h3>
+      <p>Perfect for individuals</p>
+      <div class="price">₹4,999</div>
+      <a href="#contact">Get Started</a>
+    </div>
+    <div class="pricing-card">
+      <h3>Professional</h3>
+      <p>For growing influencers</p>
+      <div class="price">₹9,999</div>
+      <a href="#contact">Get Started</a>
+    </div>
+    <div class="pricing-card">
+      <h3>Business</h3>
+      <p>For businesses & brands</p>
+      <div class="price">₹14,999</div>
+      <a href="#contact">Get Started</a>
+    </div>
+  </section>
+
+  <section class="counters">
+    <div class="counter-box">
+      <div class="counter-number" id="clients">0</div>
+      <p>Happy Clients</p>
+    </div>
+    <div class="counter-box">
+      <div class="counter-number" id="projects">0</div>
+      <p>Projects Done</p>
+    </div>
+    <div class="counter-box">
+      <div class="counter-number" id="experience">0</div>
+      <p>Years Experience</p>
+    </div>
+  </section>
+
+  <div class="testimonial-slider">
+    <blockquote>"Working with Pawan was the best decision! His strategies helped our brand go viral on Instagram in just weeks."</blockquote>
     <h4>– Happy Client</h4>
+    <blockquote>"His automation tools saved us hours every week. Highly recommended!"</blockquote>
+    <h4>– Startup Team</h4>
+    <blockquote>"Thanks to Pawan, I doubled my followers and increased brand reach quickly."</blockquote>
+    <h4>– Personal Brand Owner</h4>
   </div>
 
   <div class="cta">
@@ -167,5 +271,29 @@
   <footer>
     <p>&copy; 2025 Pawan Pandit. All rights reserved.</p>
   </footer>
+
+  <script>
+    const animateCounter = (id, end, duration) => {
+      let start = 0;
+      const counter = document.getElementById(id);
+      const increment = end / (duration / 16);
+      const step = () => {
+        start += increment;
+        if (start >= end) {
+          counter.textContent = end;
+        } else {
+          counter.textContent = Math.ceil(start);
+          requestAnimationFrame(step);
+        }
+      };
+      step();
+    };
+
+    window.onload = () => {
+      animateCounter("clients", 150, 2000);
+      animateCounter("projects", 300, 2000);
+      animateCounter("experience", 5, 2000);
+    };
+  </script>
 </body>
 </html>
