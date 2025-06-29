@@ -13,6 +13,11 @@
       background: url('pawan_real_bg_resized.jpg') no-repeat center center/cover;
       color: #fff;
       backdrop-filter: blur(4px);
+      transition: background 0.4s, color 0.4s;
+    }
+    body.dark-mode {
+      background: #111;
+      color: #eee;
     }
     .overlay {
       background-color: rgba(0,0,0,0.6);
@@ -20,6 +25,20 @@
       min-height: 100vh;
       text-align: center;
     }
+    .loader {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #000;
+      color: #0ff;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+    .hidden { display: none; }
     .profile-img {
       width: 160px;
       height: 160px;
@@ -103,9 +122,34 @@
       font-weight: bold;
       color: #0ff;
     }
-    @keyframes scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-300%); }
+    .toggle-mode {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      z-index: 10000;
+      background: #0ff;
+      border: none;
+      padding: 10px 20px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 20px;
+    }
+    .floating-contact {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+    }
+    .floating-contact a {
+      display: inline-block;
+      margin: 5px;
+      font-size: 24px;
+      background: #25D366;
+      padding: 12px;
+      border-radius: 50%;
+      color: white;
+      box-shadow: 0 0 10px #000;
+      text-decoration: none;
     }
     footer {
       margin-top: 40px;
@@ -114,6 +158,10 @@
     }
   </style>
   <script>
+    window.addEventListener('load', () => {
+      document.querySelector('.loader').classList.add('hidden');
+    });
+
     document.addEventListener('DOMContentLoaded', () => {
       const phrases = [
         "AI Master & Digital Marketing Expert",
@@ -142,15 +190,25 @@
       }
       typeText(phrases[i]);
 
-      // 🎵 Background music
       const audio = new Audio("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3");
       audio.loop = true;
       audio.volume = 0.3;
       audio.play().catch(e => console.log("Autoplay blocked"));
+
+      // Toggle mode
+      document.getElementById('modeBtn').addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+      });
     });
   </script>
 </head>
 <body>
+  <button id="modeBtn" class="toggle-mode">🌓 Mode</button>
+  <div class="loader">Loading your experience...</div>
+  <div class="floating-contact">
+    <a href="https://wa.me/919105274053" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="mailto:pawanpandit9105@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+  </div>
   <div class="overlay">
     <img class="profile-img" src="pawan_pandit_profile.png" alt="Pawan Pandit">
     <h1>Pawan Pandit</h1>
