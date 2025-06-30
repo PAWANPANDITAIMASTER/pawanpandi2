@@ -1,225 +1,209 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>मेरी सेवा वेबसाइट</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f4f8;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #00695c;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        h1 {
-            margin: 0;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #004d40;
-        }
-        nav a {
-            color: white;
-            padding: 14px 20px;
-            text-decoration: none;
-        }
-        nav a:hover {
-            background-color: #00695c;
-        }
-        section {
-            padding: 20px;
-            max-width: 900px;
-            margin: auto;
-        }
-        /* फॉर्म का स्टाइल */
-        form {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        label {
-            display: block;
-            margin-top: 15px;
-            font-weight: bold;
-        }
-        textarea, select {
-            width: 100%;
-            padding: 8px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            resize: vertical;
-        }
-        button {
-            margin-top: 20px;
-            padding: 12px 25px;
-            background-color: #00695c;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #004d40;
-        }
-        /* सोशल मीडिया आइकॉन के लिए स्टाइल */
-        .social-icons {
-            margin-top: 20px;
-            text-align: center;
-        }
-        .social-icons a {
-            margin: 0 10px;
-            display: inline-block;
-            text-decoration: none;
-        }
-        .social-icons img {
-            width: 40px;
-            height: 40px;
-            transition: transform 0.2s;
-        }
-        .social-icons img:hover {
-            transform: scale(1.2);
-        }
-        /* कस्टम बटन का स्टाइल */
-        .custom-button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 15px 30px;
-            background-color: #ff5722;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.1em;
-            transition: background-color 0.3s;
-        }
-        .custom-button:hover {
-            background-color: #e64a19;
-        }
-        footer {
-            background-color: #00695c;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            margin-top: 40px;
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AI & Digital Marketing</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212; /* Dark theme background */
+    color: #fff;
+  }
+
+  /* Header Styles */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #000;
+  }
+
+  nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+
+  nav a:hover {
+    color: #00b894; /* Green hover color */
+  }
+
+  /* CTA Button */
+  .cta {
+    background-color: #00b894;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s;
+  }
+
+  .cta:hover {
+    background-color: #019d81;
+  }
+
+  /* Main Hero Section */
+  .hero {
+    display: flex;
+    align-items: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #000, #222);
+  }
+
+  .hero-content {
+    flex: 1;
+    padding-right: 20px;
+  }
+
+  h1 {
+    font-size: 3em;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+  }
+
+  p {
+    font-size: 1.2em;
+    line-height: 1.6;
+  }
+
+  /* About Me Section */
+  .about {
+    padding: 40px 20px;
+  }
+
+  .about h3 {
+    font-size: 2em;
+    margin-bottom: 15px;
+  }
+
+  /* Services */
+  .services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px 20px;
+  }
+
+  .service-item {
+    flex: 1 1 150px;
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  /* Testimonials */
+  .testimonials {
+    padding: 40px 20px;
+    background-color: #1a1a1a;
+  }
+
+  /* Pricing */
+  .pricing {
+    padding: 40px 20px;
+  }
+
+  /* Footer */
+  footer {
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9em;
+  }
+
+  /* Responsive */
+  @media(max-width: 768px){
+    .hero {
+      flex-direction: column;
+      text-align: center;
+    }
+    .hero-content {
+      padding: 0;
+    }
+    .services {
+      flex-direction: column;
+    }
+  }
+</style>
 </head>
 <body>
-    <header>
-        <h1>मेरी सेवा वेबसाइट</h1>
-    </header>
-    <nav>
-        <a href="#home">होम</a>
-        <a href="#services">सेवाएँ</a>
-        <a href="#form">फॉर्म</a>
-        <a href="#about">हमारे बारे में</a>
-    </nav>
 
-    <section id="home">
-        <h2>स्वागत है!</h2>
-        <p>यह वेबसाइट आपकी सेवाओं को दर्शाने और आपके ग्राहक से जुड़ने का माध्यम है। नीचे फॉर्म भरें ताकि हम आपकी आवश्यकताओं को समझ सकें।</p>
-        <!-- इमेज जोड़ें -->
-        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="सेवा इमेज" style="width:100%; max-width:600px; border-radius:8px; margin-top:20px;">
-    </section>
+<header>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Pricing</a>
+    <a href="#">Testimonials</a>
+  </nav>
+  <a href="#" class="cta">Contact</a>
+</header>
 
-    <section id="services">
-        <h2>हमारी सेवाएँ</h2>
-        <ul>
-            <li>AI Tools Training</li>
-            <li>Digital Marketing</li>
-            <li>Instagram Growth</li>
-        </ul>
-    </section>
+<section class="hero">
+  <div class="hero-content">
+    <h1>AI & DIGITAL MARKETING</h1>
+    <h2>Pawan Pandit</h2>
+    <p>AI Master & Digital Marketing Expert</p>
+  </div>
+  <!-- आप यहाँ अपनी फोटो जोड़ सकते हैं -->
+  <div>
+    <img src="your-photo.jpg" alt="Pawan Pandit" style="width:300px; border-radius:10px;">
+  </div>
+</section>
 
-    <section id="form">
-        <h2>अपनी जानकारी भरें</h2>
-        <form id="serviceForm">
-            <!-- 1. Purpose -->
-            <label for="purpose">1. Purpose<br><small>आपकी वेबसाइट का मुख्य उद्देश्य क्या है? (जैसे लीड जेनरेशन, क्लाइंट कन्वर्जन, पोर्टफोलियो शोकेस, शिक्षा आदि)</small></label>
-            <textarea id="purpose" name="purpose" rows="3" required></textarea>
+<section class="about">
+  <h3>About Me</h3>
+  <p>I'm Pawan Pandit, an AI Master and Digital Marketing Expert-dedicated to empowering businesses and individuals with the power of AI tools, automation, and creative growth strategies.</p>
+</section>
 
-            <!-- 2. Specific Context -->
-            <label for="services">2. Specific Context<br><small>आपकी सेवाएँ:</small></label>
-            <textarea id="services" name="services" rows="4" placeholder="AI Tools Training, Digital Marketing, Instagram Growth आदि।"></textarea>
+<section class="services">
+  <div class="service-item">
+    <h4>AI Tools Training</h4>
+  </div>
+  <div class="service-item">
+    <h4>Digital Marketing</h4>
+  </div>
+  <div class="service-item">
+    <h4>Instagram Growth</h4>
+  </div>
+  <div class="service-item">
+    <h4>Clients: 50+</h4>
+  </div>
+  <div class="service-item">
+    <h4>Projects: 200+</h4>
+  </div>
+  <div class="service-item">
+    <h4>Experience: 5+ Years</h4>
+  </div>
+</section>
 
-            <!-- 3. Preferred Format -->
-            <label for="format">3. Preferred Format<br><small>आप किस प्रकार का प्रांप्ट चाहते हैं?</small></label>
-            <select id="format" name="format" required>
-                <option value="">--चुनें--</option>
-                <option value="AI Copywriting">💬 AI Copywriting (टेक्स्ट)</option>
-                <option value="UI/UX Design">🎨 Full Website UI/UX</option>
-                <option value="Section-wise">📄 सेक्शन-वाइज़ (अबाउट, सर्विस, प्राइसिंग)</option>
-            </select>
+<section class="testimonials">
+  <h3>Testimonials</h3>
+  <p>"Pawan's AI strategies helped us grow tremendously!"</p>
+</section>
 
-            <!-- 4. Tone and Style -->
-            <label for="tone">4. Tone and Style<br><small>आप किस टोन को प्राथमिकता देते हैं?</small></label>
-            <select id="tone" name="tone" required>
-                <option value="">--चुनें--</option>
-                <option value="Expert and formal">विशेषज्ञ और औपचारिक</option>
-                <option value="Friendly and approachable">मित्रवत और approachable</option>
-                <option value="Motivational and confident">प्रेरणादायक और आत्मविश्वासपूर्ण</option>
-                <option value="Trendy and modern">ट्रेंडी और आधुनिक</option>
-                <option value="Other">अन्य</option>
-            </select>
+<section class="pricing">
+  <h3>Pricing</h3>
+  <p>Basic | Standard</p>
+</section>
 
-            <!-- 5. Target Audience -->
-            <label for="audience">5. Target Audience<br><small>आपके आदर्श ग्राहक कौन हैं?</small></label>
-            <textarea id="audience" name="audience" rows="3"></textarea>
-            <small>क्या वे भारत में हैं या वैश्विक? क्या वे पहले से AI-aware हैं या शुरुआत कर रहे हैं?</small>
+<footer>
+  <a href="#" class="cta">Get in Touch</a>
+  <p>&copy; 2023 Pawan Pandit. All rights reserved.</p>
+</footer>
 
-            <!-- 6. Constraints or Limitations -->
-            <label for="constraints">6. Constraints or Limitations<br><small>कोई विशेष प्रतिबंध या सीमाएँ?</small></label>
-            <textarea id="constraints" name="constraints" rows="3"></textarea>
-
-            <!-- 7. Personal Preferences -->
-            <label for="preferences">❤️ 7. Personal Preferences<br><small>कोई जरूरी शब्द, थीम या वाक्यांश?</small></label>
-            <textarea id="preferences" name="preferences" rows="3"></textarea>
-
-            <!-- Submit Button -->
-            <button type="submit">सबमिट करें</button>
-        </form>
-    </section>
-
-    <section id="about">
-        <h2>हमारे बारे में</h2>
-        <p>यहाँ आप अपनी कंपनी, विशेषज्ञता या अपने बारे में जानकारी जोड़ सकते हैं।</p>
-        <!-- सोशल मीडिया लिंक आइकॉन -->
-        <div class="social-icons">
-            <a href="https://facebook.com" target="_blank" aria-label="Facebook">
-                <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
-            </a>
-            <a href="https://twitter.com" target="_blank" aria-label="Twitter">
-                <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
-            </a>
-            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
-                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
-            </a>
-            <a href="https://instagram.com" target="_blank" aria-label="Instagram">
-                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
-            </a>
-        </div>
-        <!-- कस्टम बटन -->
-        <a href="#contact" class="custom-button">अधिक जानें</a>
-    </section>
-
-    <footer>
-        &copy; 2024 मेरी सेवा वेबसाइट. सर्वाधिकार सुरक्षित।
-    </footer>
-
-    <script>
-        document.getElementById('serviceForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('आपका फॉर्म सबमिट हो गया! धन्यवाद।');
-            // यहाँ आप फॉर्म डेटा को सर्वर पर भेजने का कोड जोड़ सकते हैं
-        });
-    </script>
 </body>
 </html>
