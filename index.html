@@ -81,6 +81,15 @@
       max-width: 600px;
       border-radius: 10px;
     }
+    .testimonial-slider {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+    }
+    .testimonial-slider .testimonial {
+      scroll-snap-align: start;
+      min-width: 100%;
+    }
     footer {
       text-align: center;
       padding: 30px;
@@ -146,11 +155,16 @@
 
   <section>
     <h2 class="section-title">Testimonials</h2>
-    <div class="testimonial">
-      <p>"Pawan's AI strategies helped us grow tremendously!"</p>
-    </div>
-    <div class="testimonial">
-      <p>"Incredible expertise in digital marketing and personal branding!"</p>
+    <div class="testimonial-slider">
+      <div class="testimonial">
+        <p>"Pawan's AI strategies helped us grow tremendously!"</p>
+      </div>
+      <div class="testimonial">
+        <p>"Incredible expertise in digital marketing and personal branding!"</p>
+      </div>
+      <div class="testimonial">
+        <p>"Highly recommended for anyone looking to scale digitally with AI."</p>
+      </div>
     </div>
   </section>
 
