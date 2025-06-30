@@ -3,18 +3,50 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>AI & Digital Marketing</title>
+<title>AI Master & Digital Growth Expert</title>
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
 <style>
   body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    background-color: #121212; /* Dark theme background */
+    background-color: #121212;
     color: #fff;
   }
 
-  /* Header Styles */
+  /* एनिमेटेड बैकग्राउंड का स्टाइल */
+  .hero {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 50px 20px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #000, #222);
+  }
+  /* पेज का मुख्य बैकग्राउंड एनिमेशन */
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle, rgba(0, 185, 148, 0.2) 20%, transparent 70%);
+    background-size: 200px 200px;
+    animation: moveBackground 30s linear infinite;
+    z-index: -1;
+  }
+
+  @keyframes moveBackground {
+    0% { background-position: 0 0; }
+    100% { background-position: 200px 200px; }
+  }
+
+  /* बाकी स्टाइल्स पहले जैसा ही रहेगा */
+  body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #fff;
+  }
   header {
     display: flex;
     justify-content: space-between;
@@ -22,119 +54,97 @@
     padding: 20px;
     background-color: #000;
   }
-
   nav a {
     color: #fff;
     margin: 0 15px;
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s;
   }
-
   nav a:hover {
-    color: #00b894; /* Green hover color */
+    color: #00b894;
   }
-
-  /* CTA Button */
   .cta {
     background-color: #00b894;
-    color: #fff;
     padding: 10px 20px;
     border-radius: 25px;
+    color: #fff;
     text-decoration: none;
     font-weight: 500;
-    transition: background-color 0.3s;
   }
-
   .cta:hover {
     background-color: #019d81;
   }
-
-  /* Main Hero Section */
-  .hero {
-    display: flex;
-    align-items: center;
-    padding: 50px 20px;
-    background: linear-gradient(135deg, #000, #222);
-  }
-
   .hero-content {
     flex: 1;
-    padding-right: 20px;
+    min-width: 300px;
+    position: relative;
+    z-index: 1;
   }
-
   h1 {
     font-size: 3em;
-    font-weight: 700;
     margin-bottom: 20px;
   }
-
   h2 {
     font-size: 2em;
     margin-bottom: 15px;
   }
-
-  p {
+  .highlight {
+    margin-top: 20px;
+    font-size: 1.4em;
+    font-weight: 600;
+    color: #00b894;
+  }
+  .cta-phrases {
+    margin-top: 30px;
     font-size: 1.2em;
     line-height: 1.6;
   }
-
-  /* About Me Section */
-  .about {
+  section {
     padding: 40px 20px;
   }
-
-  .about h3 {
+  #about h3, #testimonials h3, #pricing h3 {
     font-size: 2em;
     margin-bottom: 15px;
   }
-
-  /* Services */
   .services {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    padding: 40px 20px;
   }
-
   .service-item {
     flex: 1 1 150px;
     background-color: #222;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
+    transition: 0.3s all;
   }
-
-  /* Testimonials */
-  .testimonials {
+  .service-item:hover {
+    background-color: #333;
+    transform: translateY(-3px);
+  }
+  #contact {
     padding: 40px 20px;
     background-color: #1a1a1a;
   }
-
-  /* Pricing */
-  .pricing {
-    padding: 40px 20px;
+  #contact h3 {
+    font-size: 2em;
+    margin-bottom: 15px;
   }
-
-  /* Footer */
+  #contact p {
+    font-size: 1.2em;
+    margin: 10px 0;
+  }
   footer {
     background-color: #000;
     padding: 20px;
     text-align: center;
     font-size: 0.9em;
   }
-
-  /* Responsive */
-  @media(max-width: 768px){
+  @media(max-width:768px){
     .hero {
       flex-direction: column;
       text-align: center;
-    }
-    .hero-content {
-      padding: 0;
-    }
-    .services {
-      flex-direction: column;
     }
   }
 </style>
@@ -144,64 +154,88 @@
 <header>
   <nav>
     <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Services</a>
-    <a href="#">Pricing</a>
-    <a href="#">Testimonials</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Contact</a>
   </nav>
-  <a href="#" class="cta">Contact</a>
+  <a href="#contact" class="cta">Contact</a>
 </header>
 
 <section class="hero">
   <div class="hero-content">
-    <h1>AI & DIGITAL MARKETING</h1>
-    <h2>Pawan Pandit</h2>
-    <p>AI Master & Digital Marketing Expert</p>
+    <h1>Empower Your Business with AI</h1>
+    <h2>AI Master & Digital Growth Expert - Pawan Pandit</h2>
+    <div class="cta-phrases">
+      <p>"AI का सही इस्तेमाल ही आपकी सबसे बड़ी ताकत है"</p>
+      <p>"Tools बदलते हैं, लेकिन Strategy ही जीत दिलाती है"</p>
+      <p>"Stop Guessing. Start Growing — with AI."</p>
+      <p>"Instagram को Funnel में बदलें, Leads में नहीं, Clients में सोचें!"</p>
+      <p>"Growth सिर्फ Views से नहीं होती, Value से होती है."</p>
+    </div>
+    <div class="highlight">
+      💡 जरूरी कीवर्ड्स: AI Master, Digital Growth Expert, Smart Funnels, AI Tools Training, Result-Driven Strategy, Instagram Branding, Performance Marketing, ChatGPT Specialist, Content Automation, Lead Conversion Expert
+    </div>
   </div>
-  <!-- आप यहाँ अपनी फोटो जोड़ सकते हैं -->
+  <!-- अपने फोटो का लिंक यहां डालें -->
   <div>
     <img src="your-photo.jpg" alt="Pawan Pandit" style="width:300px; border-radius:10px;">
   </div>
 </section>
 
-<section class="about">
+<section id="about">
   <h3>About Me</h3>
-  <p>I'm Pawan Pandit, an AI Master and Digital Marketing Expert-dedicated to empowering businesses and individuals with the power of AI tools, automation, and creative growth strategies.</p>
+  <p>मैं हूँ Pawan Pandit, एक AI Master और Digital Growth Expert, जो आपके बिज़नेस को AI के साथ नई ऊँचाइयों पर ले जाने के लिए प्रतिबद्ध हैं। "AI से आपके बिज़नेस को पावर देना" हमारा मिशन है।</p>
 </section>
 
-<section class="services">
+<section id="services" class="services">
   <div class="service-item">
     <h4>AI Tools Training</h4>
+    <p>सिखें कैसे करें AI टूल्स का सही इस्तेमाल और Content Automation।</p>
   </div>
   <div class="service-item">
-    <h4>Digital Marketing</h4>
+    <h4>Digital Growth Strategy</h4>
+    <p>Result-Driven Strategy से तेजी से अपने बिज़नेस को बढ़ाएँ।</p>
   </div>
   <div class="service-item">
-    <h4>Instagram Growth</h4>
+    <h4>Smart Funnels & Lead Conversion</h4>
+    <p>Instagram को Funnel में बदलें, Leads से नहीं, Clients में सोचें!</p>
   </div>
   <div class="service-item">
-    <h4>Clients: 50+</h4>
+    <h4>Performance Marketing</h4>
+    <p>ROI बढ़ाने के लिए Performance Marketing का इस्तेमाल करें।</p>
   </div>
   <div class="service-item">
-    <h4>Projects: 200+</h4>
+    <h4>ChatGPT Specialist</h4>
+    <p>ChatGPT का प्रयोग कर Content Automation और Engagement बढ़ाएँ।</p>
   </div>
   <div class="service-item">
-    <h4>Experience: 5+ Years</h4>
+    <h4>Content Automation</h4>
+    <p>Content Automation से समय और मेहनत बचाएँ, Growth बढ़ाएँ।</p>
   </div>
 </section>
 
-<section class="testimonials">
+<section id="testimonials">
   <h3>Testimonials</h3>
-  <p>"Pawan's AI strategies helped us grow tremendously!"</p>
+  <p>"Pawan की रणनीतियों ने हमारे बिज़नेस को नई दिशा दी। AI का सही इस्तेमाल ही हमारी ताकत है।"</p>
 </section>
 
-<section class="pricing">
+<section id="pricing">
   <h3>Pricing</h3>
-  <p>Basic | Standard</p>
+  <p>Basic | Standard | Premium</p>
+</section>
+
+<!-- Contact Details -->
+<section id="contact">
+  <h3>Contact Me</h3>
+  <p>फोन: 9105274053</p>
+  <p>ईमेल: <a href="mailto:pawanpandit9105@gmail.com" style="color:#00b894;">pawanpandit9105@gmail.com</a></p>
+  <p>मैं यहाँ हूँ आपकी सहायता के लिए।</p>
 </section>
 
 <footer>
-  <a href="#" class="cta">Get in Touch</a>
+  <a href="#contact" class="cta">Get in Touch</a>
   <p>&copy; 2023 Pawan Pandit. All rights reserved.</p>
 </footer>
 
