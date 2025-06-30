@@ -3,71 +3,72 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pawan Pandit | AI & Digital Marketing</title>
+  <title>Projects | Pawan Pandit</title>
   <style>
-    * {
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #111;
+      color: #fff;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
-    html, body {
-      height: 100%;
-      font-family: 'Segoe UI', sans-serif;
-      background: #000;
-      color: #fff;
-      overflow: hidden;
-    }
-    .overlay {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: #000;
-      z-index: 10;
-      animation: slideOut 2s forwards;
-    }
-    @keyframes slideOut {
-      0% {transform: translateY(0);}
-      100% {transform: translateY(-100%);}
-    }
-    .hero {
-      position: relative;
-      height: 100vh;
-      background: url('https://assets.codepen.io/3364143/ai-bg2.gif') center/cover no-repeat;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    header {
+      padding: 30px;
       text-align: center;
+      background: #000;
     }
-    .hero h1 {
-      font-size: 3.5rem;
-      margin-bottom: 1rem;
-      color: #fff;
-      text-shadow: 0 0 10px #00f5ff;
+    header h1 {
+      margin: 0;
+      color: #00f5ff;
     }
-    .hero p {
-      font-size: 1.2rem;
-      color: #ddd;
+    .project-section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
-    .hero::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.6);
+    .project {
+      background: #1e1e1e;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 10px rgba(0,255,255,0.2);
     }
-    .hero-content {
-      position: relative;
-      z-index: 2;
+    .project img {
+      max-width: 100%;
+      border-radius: 6px;
+    }
+    .project h2 {
+      color: #00f5ff;
+      margin-top: 10px;
+    }
+    .project p {
+      color: #ccc;
     }
   </style>
 </head>
 <body>
-  <div class="overlay"></div>
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Pawan Pandit</h1>
-      <p>AI Master & Digital Marketing Expert</p>
+  <header>
+    <h1>My Projects</h1>
+  </header>
+
+  <div class="project-section">
+    <div class="project">
+      <img src="https://source.unsplash.com/800x400/?ai,technology" alt="AI Project">
+      <h2>AI Tools & Automation</h2>
+      <p>Designed smart automation workflows using AI tools like ChatGPT, Midjourney, and Runway ML to streamline content creation and brand building.</p>
     </div>
-  </section>
+
+    <div class="project">
+      <img src="https://source.unsplash.com/800x400/?digital,marketing" alt="Marketing Project">
+      <h2>Digital Marketing Strategy</h2>
+      <p>Executed result-driven marketing campaigns, Instagram growth tactics, and lead funnels tailored for business conversion.</p>
+    </div>
+
+    <div class="project">
+      <img src="https://source.unsplash.com/800x400/?video,editing" alt="Video Project">
+      <h2>Video Presentation & Editing</h2>
+      <p>Created high-impact marketing videos using tools like Canva, CapCut, and Lumen5 for reels, brand stories, and personal branding.</p>
+    </div>
+  </div>
 </body>
 </html>
